@@ -1,4 +1,1 @@
-
-
-https://github.com/user-attachments/assets/e83f943b-b14e-4b91-a2c9-d818c2c5599e
-
+![mindemate](https://github.com/user-attachments/assets/d5f2e04c-5477-42e4-b4d0-fddbed821e4c)
