@@ -46,11 +46,19 @@ export const POST = async (req: Request) => {
     const aiResponse = completion.choices[0].message.content;
 
     return NextResponse.json({ reply: aiResponse });
-  } catch (error: any) {
-    console.error("GPT API Error:", error);
-    return NextResponse.json(
-      { error: error.message || "Unexpected error" },
-      { status: 500 }
-    );
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error("GPT API Error:", error);
+      return NextResponse.json(
+        { error: error.message }, 
+        { status: 500 }
+      );
+    } else {
+      console.error("Unknown error:", error);
+      return NextResponse.json(
+        { error: "Unexpected error" }, 
+        { status: 500 }
+      );
+    }
   }
 }
